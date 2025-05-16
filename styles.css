@@ -1,0 +1,1015 @@
+/* Reset e estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #1a1e25;
+    color: #fff;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Barra superior */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1e25;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.logo {
+    height: 30px;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.btn-login, .btn-register {
+    padding: 5px 10px;
+    border: 1px solid #333;
+    background-color: #1a1e25;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-register {
+    background-color: #ff6600;
+}
+
+/* Banner de promoção */
+.promo-banner {
+    background-color: #8b4513;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.promo-banner p {
+    animation: scrollText 20s linear infinite;
+}
+
+@keyframes scrollText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Menu lateral */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 85%;
+    height: 100%;
+    background-color: #1a1e25;
+    z-index: 1000;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    padding: 10px;
+}
+
+.side-menu.active {
+    left: 0;
+}
+
+.side-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+    margin-bottom: 10px;
+}
+
+.close-menu {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.menu-item {
+    padding: 10px;
+    border-bottom: 1px solid #333;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu-item i {
+    margin-right: 10px;
+    width: 20px;
+}
+
+.menu-highlight {
+    color: #ff6600;
+    font-weight: bold;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.menu-grid-item {
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.green {
+    background-color: #28a745;
+}
+
+.blue {
+    background-color: #007bff;
+}
+
+.orange {
+    background-color: #d35400;
+}
+
+.navy {
+    background-color: #001f3f;
+}
+
+.coming-soon {
+    background-color: #ff6600;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 10px;
+    font-size: 12px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.language-selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+}
+
+.flag {
+    width: 20px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+/* Banner de download do app no menu lateral */
+.app-download-banner {
+    display: flex;
+    align-items: center;
+    background-color: #2a2e35;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+    border: 1px solid #ff6600;
+}
+
+.app-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.app-info {
+    flex-grow: 1;
+}
+
+.app-info h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.app-info p {
+    font-size: 12px;
+    color: #ccc;
+}
+
+.download-app-btn {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Overlay para quando o menu estiver aberto */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    display: none;
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
+/* Conteúdo principal */
+.main-content {
+    padding: 0 0 15px 0;
+}
+
+/* Banner principal com imagem */
+.main-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner-slider {
+    position: relative;
+    width: 100%;
+}
+
+.banner-slide {
+    display: none;
+    position: relative;
+    width: 100%;
+}
+
+.banner-slide.active {
+    display: block;
+}
+
+.banner-image {
+    width: 100%;
+    display: block;
+}
+
+.banner-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.banner-text h1 {
+    font-size: 48px;
+    color: #4dff4d;
+    margin: 10px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.banner-text p {
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.small-text {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.no-limit {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 10px;
+}
+
+.age-restriction {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 3px 6px;
+    border-radius: 3px;
+    font-size: 10px;
+}
+
+/* Banner de download do aplicativo */
+.app-download-section {
+    margin: 20px 15px;
+}
+
+.app-banner {
+    background: linear-gradient(135deg, #ff6600 0%, #ff9900 100%);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.app-banner-content {
+    display: flex;
+    align-items: center;
+}
+
+.app-icon-container {
+    margin-right: 15px;
+}
+
+.app-icon-large {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.app-banner-text {
+    flex-grow: 1;
+}
+
+.app-banner-text h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.app-banner-text p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 10px;
+}
+
+.download-app-banner-btn {
+    background-color: white;
+    color: #ff6600;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Carrossel de indicadores */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 15px 0;
+}
+
+.indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #555;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: #ff6600;
+}
+
+/* Promoções em destaque */
+.promo-badges {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 15px 20px;
+}
+
+.promo-badge {
+    width: 48%;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.badge-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Categorias de jogos */
+.game-categories {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 15px 20px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 70px;
+    cursor: pointer;
+}
+
+.category-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.category-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.category-name {
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Cabeçalho de seção */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 15px 15px;
+}
+
+.view-all {
+    color: #ff6600;
+    text-decoration: none;
+}
+
+/* Grade de jogos */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 0 15px 20px;
+}
+
+.game-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.game-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.game-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    padding: 8px;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Maiores Vitórias */
+.big-wins {
+    margin: 0 15px 20px;
+}
+
+.big-wins h2 {
+    margin-bottom: 10px;
+}
+
+.wins-table {
+    background-color: #222;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.table-header {
+    display: flex;
+    padding: 10px;
+    background-color: #333;
+    font-weight: bold;
+}
+
+.table-row {
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.table-row.alt {
+    background-color: #1a1e25;
+}
+
+.game-col {
+    flex: 1;
+}
+
+.value-col {
+    width: 40%;
+    text-align: right;
+    color: #4dff4d;
+}
+
+/* Barra de navegação inferior */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1a1e25;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top: 1px solid #333;
+    z-index: 100;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.nav-item-special {
+    position: relative;
+}
+
+.special-badge {
+    background-color: #28a745;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 10px;
+    font-size: 10px;
+    margin-bottom: 2px;
+}
+
+.special-text {
+    font-size: 8px;
+    margin-bottom: 2px;
+}
+
+/* Ícones */
+.icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Espaçamento para a navegação inferior */
+.bottom-spacer {
+    height: 60px;
+}
+
+/* Modal de seleção de sistema */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Animação para o modal */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-content {
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+/* Estilos para o modal de seleção de sistema */
+.system-select-modal {
+    max-width: 500px;
+    width: 90%;
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #2a2e35, #1a1e25);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.system-select-modal .modal-header {
+    background: linear-gradient(to right, #ff6600, #ff9900);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.system-select-modal .modal-header h2 {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.system-select-modal .close-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.system-select-modal .close-btn:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.system-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 20px;
+}
+
+.system-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 140px;
+}
+
+.system-btn:hover {
+    transform: translateY(-5px);
+}
+
+.system-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.android-icon {
+    background: linear-gradient(135deg, #a4c639, #8aa631);
+    box-shadow: 0 10px 20px rgba(164, 198, 57, 0.3);
+}
+
+.iphone-icon {
+    background: linear-gradient(135deg, #333, #000);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.system-icon img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+.system-btn span {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+/* Estilos para o modal de download */
+.download-dialog-modal {
+    max-width: 600px;
+    width: 90%;
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #2a2e35, #1a1e25);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.download-dialog-modal .modal-header {
+    background: linear-gradient(to right, #ff6600, #ff9900);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.download-dialog-modal .modal-header h2 {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.download-dialog-modal .close-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.download-dialog-modal .close-btn:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.download-dialog-modal .modal-body {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* Estilo para o botão de download grande na parte inferior */
+.download-big-btn {
+    background: linear-gradient(135deg, #ff6600, #ff9900);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 102, 0, 0.4);
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.download-big-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 102, 0, 0.5);
+}
+
+.download-big-btn i {
+    font-size: 1.2rem;
+}
+
+/* Estilo para os recursos do app em lista */
+.app-features-list {
+    padding: 0 20px 20px 20px;
+}
+
+.app-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.app-feature-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.feature-circle-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ff6600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-shrink: 0;
+}
+
+.app-features-container {
+    display: flex;
+    padding: 30px;
+    gap: 30px;
+}
+
+.app-features {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.app-feature {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.app-feature:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.feature-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff6600, #ff9900);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 8px rgba(255, 102, 0, 0.3);
+}
+
+.feature-text {
+    flex: 1;
+}
+
+.feature-text span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+}
+
+.app-screenshot-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.app-screenshot {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.app-screenshot img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.download-now-btn {
+    background: linear-gradient(135deg, #ff6600, #ff9900);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 102, 0, 0.4);
+    width: 100%;
+    max-width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.download-now-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 102, 0, 0.5);
+}
+
+.download-now-btn i {
+    font-size: 1.2rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .app-features-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .app-screenshot-container {
+        order: -1;
+        margin-bottom: 20px;
+    }
+    
+    .app-feature {
+        padding: 12px;
+    }
+    
+    .feature-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .feature-text span {
+        font-size: 0.9rem;
+    }
+    
+    .download-now-btn {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .system-options {
+        gap: 15px;
+    }
+    
+    .system-icon {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .system-btn span {
+        font-size: 1rem;
+    }
+    
+    .app-features-container {
+        padding: 15px;
+    }
+    
+    .app-feature {
+        padding: 10px;
+        gap: 10px;
+    }
+    
+    .feature-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+}
