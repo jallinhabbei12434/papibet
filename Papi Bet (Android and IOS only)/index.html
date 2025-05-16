@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papi Bet</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Barra superior -->
+    <div class="top-bar">
+        <div class="menu-icon" id="menuToggle">≡</div>
+        <img class="logo" src="images/logo.png" alt="Papi Bet">
+        <div class="auth-buttons">
+            <button class="btn-login" id="loginBtn">LOGIN</button>
+            <button class="btn-register" id="registerBtn">REGISTRE-SE</button>
+        </div>
+    </div>
+
+    <!-- Banner de promoção -->
+    <div class="promo-banner">
+        <p>🎁🔥 Nova recompensa: Gire a Roda da Fortuna e ganhe prêmios diariamente 🔥🎁</p>
+    </div>
+
+    <!-- Menu lateral -->
+    <div class="side-menu" id="sideMenu">
+        <div class="side-menu-header">
+            <img class="logo" src="images/logo.png" alt="Papi Bet">
+            <div>Menu</div>
+            <div class="close-menu" id="closeMenu">✕</div>
+        </div>
+        
+        <div class="menu-grid">
+            <div class="menu-grid-item green" id="menuItemSlots">
+                <div>GRATIS</div>
+                <div>GAME OF SLOTS</div>
+                <div>Torneios de slots</div>
+            </div>
+            <div class="menu-grid-item blue" id="menuItemPromo">
+                <div>Promoções</div>
+            </div>
+            <div class="menu-grid-item orange" id="menuItemTorneio">
+                <div>Torneio R$100k</div>
+            </div>
+            <div class="menu-grid-item navy" id="menuItemF1">
+                <div class="coming-soon">EM BREVE</div>
+                <div>F1 CORRIDA</div>
+            </div>
+        </div>
+        
+        <div class="menu-item" id="menuItemCassino">
+            <i>♠</i> Cassino <span style="float:right;">▼</span>
+        </div>
+        <div class="menu-item" id="menuItemPGsoft">
+            <i>🎮</i> PGsoft
+        </div>
+        <div class="menu-item" id="menuItemCassinoAoVivo">
+            <i>🎥</i> Cassino ao vivo <span style="float:right;">▼</span>
+        </div>
+        <div class="menu-item" id="menuItemBonus">
+            <i>🎁</i> Bônus de Cassino
+        </div>
+        <div class="menu-item" id="menuItemCrash">
+            <i>🚀</i> Crash Games
+        </div>
+        <div class="menu-item" id="menuItemIndique">
+            <i>👥</i> Indique Um Amigo
+        </div>
+        <div class="menu-item" id="menuItemBlog">
+            <i>📖</i> Blog
+        </div>
+        <div class="menu-item menu-highlight" id="menuItemPromocoes">
+            <i>🏷️</i> PROMOÇÕES
+        </div>
+        
+        <div class="language-selector" id="languageSelector">
+            <div>
+                <i>🌐</i> Linguagem
+            </div>
+            <div>
+                <img class="flag" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA7UlEQVQ4jZ2UMQ7CMAxFXyMxdGJgQGJiQGJg6sgVegcOwBk4AkfgDnTkAIgzcIQMDAgxdKBIVZEaO3HSKH+y5Lz4J7aVCCklgBbQBzrADXgAT2AFLIEpMAQGwBiYAQtgBayBO/AEHsAWWAMLoA8MgREwBeZADmyAO/AECuAFvIEP8K0hQANoAi2gDbSAJtAA6kANqAIVoAyUgCJQAHJAFsgAaSAFJIEEEAeiQBSIAGEgBASBAOAHfIAXcANOwAFYARtgBSyBBTADJsAIGAIDoAd0gTbQBOpAFSgBecAJWABzYAqMgSEwAPrfH/oDYiRwlHxs1WIAAAAASUVORK5CYII=" alt="PT"> PT <span style="float:right;">▼</span>
+            </div>
+        </div>
+        
+        <div class="menu-item" id="menuItemInfo">
+            <i>ℹ️</i> Informações e Regras <span style="float:right;">▼</span>
+        </div>
+
+        <!-- Banner de download do app no menu lateral -->
+        <div class="app-download-banner">
+            <img src="images/app-icon.png" alt="App Icon" class="app-icon">
+            <div class="app-info">
+                <h3>Aplicativo Papi Bet</h3>
+                <p>Jogue em qualquer lugar!</p>
+            </div>
+            <button id="downloadAppMenuBtn" class="download-app-btn">Baixar</button>
+        </div>
+    </div>
+
+    <!-- Overlay para quando o menu estiver aberto -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Conteúdo principal -->
+    <div class="main-content">
+        <!-- Banner principal com imagem -->
+        <div class="main-banner">
+            <div class="banner-slider" id="bannerSlider">
+                <div class="banner-slide active">
+                    <img src="images/banners/banner-indique-amigos.jpg" alt="Indique seus amigos e receba R$10" class="banner-image">
+                    <div class="banner-text">
+                        <!-- Textos removidos conforme solicitado -->
+                        <div class="age-restriction">18+ Jogue com responsabilidade</div>
+                    </div>
+                </div>
+                <div class="banner-slide">
+                    <img src="images/banners/banner-promocao.jpg" alt="Promoção Papi Bet" class="banner-image">
+                </div>
+                <div class="banner-slide">
+                    <img src="images/banners/banner-bonus.jpg" alt="Bônus de boas-vindas" class="banner-image">
+                </div>
+                <div class="banner-slide">
+                    <img src="images/banners/banner-slots.jpg" alt="Game of Slots" class="banner-image">
+                </div>
+                <div class="banner-slide">
+                    <img src="images/banners/banner-app.jpg" alt="Baixe nosso aplicativo" class="banner-image">
+                </div>
+            </div>
+        </div>
+
+        <!-- Carrossel de indicadores -->
+        <div class="carousel-indicators">
+            <div class="indicator active" data-slide="0"></div>
+            <div class="indicator" data-slide="1"></div>
+            <div class="indicator" data-slide="2"></div>
+            <div class="indicator" data-slide="3"></div>
+            <div class="indicator" data-slide="4"></div>
+        </div>
+
+        <!-- Banner de download do aplicativo -->
+        <div class="app-download-section">
+            <div class="app-banner">
+                <div class="app-banner-content">
+                    <div class="app-icon-container">
+                        <img src="images/app-icon.png" alt="Papi Bet App" class="app-icon-large">
+                    </div>
+                    <div class="app-banner-text">
+                        <h2>NOVO APLICATIVO</h2>
+                        <p>Jogue seus jogos favoritos em qualquer lugar!</p>
+                        <button id="downloadAppBannerBtn" class="download-app-banner-btn">BAIXAR AGORA</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Promoções em destaque -->
+        <div class="promo-badges">
+            <div class="promo-badge" id="promoBadge1">
+                <img src="images/badges/badge-indique-amigos.png" alt="Indique seus amigos" class="badge-image">
+            </div>
+            <div class="promo-badge" id="promoBadge2">
+                <img src="images/badges/badge-ganhe-rodadas.png" alt="Ganhe até R$600" class="badge-image">
+            </div>
+        </div>
+
+        <!-- Categorias de jogos -->
+        <div class="game-categories">
+            <div class="category" id="categoryCassinoAoVivo">
+                <div class="category-icon">
+                    <img src="images/icons/cassino-ao-vivo.png" alt="Cassino ao Vivo">
+                </div>
+                <div class="category-name">Cassino ao Vivo</div>
+            </div>
+            <div class="category" id="categoryCassino">
+                <div class="category-icon">
+                    <img src="images/icons/cassino.png" alt="Cassino">
+                </div>
+                <div class="category-name">Cassino</div>
+            </div>
+            <div class="category" id="categoryEsportes">
+                <div class="category-icon">
+                    <img src="images/icons/esportes.png" alt="Esportes">
+                </div>
+                <div class="category-name">Esportes</div>
+            </div>
+            <div class="category" id="categoryCrash">
+                <div class="category-icon">
+                    <img src="images/icons/crash.png" alt="Jogos Crash">
+                </div>
+                <div class="category-name">Jogos Crash</div>
+            </div>
+        </div>
+
+        <!-- Todos os jogos -->
+        <div class="section-header">
+            <h2>Todos Os Jogos</h2>
+            <a href="#" class="view-all" id="viewAllGames">VER TODOS ▶</a>
+        </div>
+
+        <div class="games-grid">
+            <div class="game-card" id="gameTigreSortudo">
+                <img src="images/games/tigre-sortudo-1000.jpg" alt="Tigre Sortudo 1000" class="game-image">
+                <div class="game-title">Tigre Sortudo 1000</div>
+            </div>
+            <div class="game-card" id="gameFortuneSnake">
+                <img src="images/games/fortune-snake.jpg" alt="Fortune Snake" class="game-image">
+                <div class="game-title">Fortune Snake</div>
+            </div>
+            <div class="game-card" id="gameFortuneTiger">
+                <img src="images/games/fortune-tiger.jpg" alt="Fortune Tiger" class="game-image">
+                <div class="game-title">Fortune Tiger</div>
+            </div>
+            <div class="game-card" id="gameDuelAtDawn">
+                <img src="images/games/duel-at-dawn.jpg" alt="Duel at Dawn" class="game-image">
+                <div class="game-title">Duel at Dawn</div>
+            </div>
+        </div>
+
+        <!-- Popular em PapiGames -->
+        <div class="section-header">
+            <h2>Popular Em PapiGames</h2>
+            <a href="#" class="view-all" id="viewAllPopular">VER TODOS ▶</a>
+        </div>
+
+        <div class="games-grid">
+            <div class="game-card" id="gameFootball">
+                <img src="images/games/football.jpg" alt="Football" class="game-image">
+                <div class="game-title">FOOTBALL</div>
+            </div>
+            <div class="game-card" id="gameBlackjack">
+                <img src="images/games/blackjack.jpg" alt="Futebol Studio" class="game-image">
+                <div class="game-title">FUTEBOL STUDIO</div>
+            </div>
+            <div class="game-card" id="gameBaccarat">
+                <img src="images/games/baccarat.jpg" alt="Baccarat" class="game-image">
+                <div class="game-title">BACCARAT</div>
+            </div>
+            <div class="game-card" id="gameRoulette">
+                <img src="images/games/roulette.jpg" alt="Roulette" class="game-image">
+                <div class="game-title">ROULETTE</div>
+            </div>
+        </div>
+
+        <!-- Maiores Vitórias -->
+        <div class="big-wins">
+            <h2>Maiores Vitórias</h2>
+            <div class="wins-table">
+                <div class="table-header">
+                    <div class="game-col">Jogo</div>
+                    <div class="value-col">Valor da Vitória</div>
+                </div>
+                <div class="table-row">
+                    <div class="game-col">⚙️ Sugar Rush 1000</div>
+                    <div class="value-col">R$ 1,437,000.00</div>
+                </div>
+                <div class="table-row alt">
+                    <div class="game-col">⚙️ Sugar Rush 1000</div>
+                    <div class="value-col">R$ 1,403,320.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="game-col">⚙️ Sweet Bonanza Dice...</div>
+                    <div class="value-col">R$ 1,057,630.00</div>
+                </div>
+                <div class="table-row alt">
+                    <div class="game-col">⚙️ Wanted</div>
+                    <div class="value-col">R$ 866,250.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="game-col">⚙️ Power of Merlin Meg...</div>
+                    <div class="value-col">R$ 773,600.00</div>
+                </div>
+                <div class="table-row alt">
+                    <div class="game-col">⚙️ Crazy Time</div>
+                    <div class="value-col">R$ 765,000.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="game-col">⚙️ Wanted</div>
+                    <div class="value-col">R$ 757,080.00</div>
+                </div>
+                <div class="table-row alt">
+                    <div class="game-col">⚙️ Crazy Time</div>
+                    <div class="value-col">R$ 626,250.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="game-col">⚙️ Crazy Time</div>
+                    <div class="value-col">R$ 505,000.00</div>
+                </div>
+                <div class="table-row alt">
+                    <div class="game-col">⚙️ Sweet Bonanza 1000</div>
+                    <div class="value-col">R$ 501,652.50</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Espaçador para a navegação inferior -->
+        <div class="bottom-spacer"></div>
+    </div>
+
+    <!-- Barra de navegação inferior -->
+    <div class="bottom-nav">
+        <div class="nav-item" id="navEsportes">
+            <div class="icon">
+                <img src="images/icons/esportes-nav.png" alt="Esportes">
+            </div>
+            <span>Esportes</span>
+        </div>
+        <div class="nav-item" id="navAoVivo">
+            <div class="icon">
+                <img src="images/icons/ao-vivo-nav.png" alt="Ao Vivo">
+            </div>
+            <span>Ao Vivo</span>
+        </div>
+        <div class="nav-item nav-item-special" id="navTorneios">
+            <div class="special-badge">GRATIS</div>
+            <div class="special-text">GAME OF SLOTS</div>
+            <span>Torneios de Slots</span>
+        </div>
+        <div class="nav-item" id="navTorneio">
+            <div class="icon">
+                <img src="images/icons/torneio-nav.png" alt="Torneio">
+            </div>
+            <span>Torneio</span>
+        </div>
+        <div class="nav-item" id="navJogos">
+            <div class="icon">
+                <img src="images/icons/jogos-nav.png" alt="Jogos">
+            </div>
+            <span>Jogos</span>
+        </div>
+        <div class="nav-item" id="navSuporte">
+            <div class="icon">
+                <img src="images/icons/suporte-nav.png" alt="Suporte">
+            </div>
+            <span>Suporte</span>
+        </div>
+    </div>
+
+    <!-- Modal de seleção de modelo -->
+    <div id="modelSelectModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Selecione o Sistema do seu Telefone</h2>
+                <button class="close-btn" id="closeModalBtn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="phone-models">
+                    <button class="model-btn" data-model="android" style="width: 45%; height: 180px;">
+                        <img src="images/icons/android.png" alt="Android" style="width: 100px; height: 100px;">
+                        <span style="font-size: 1.2rem; margin-top: 15px;">Android</span>
+                    </button>
+                    <button class="model-btn" data-model="iphone" style="width: 45%; height: 180px;">
+                        <img src="images/icons/iphone.png" alt="iPhone" style="width: 100px; height: 100px;">
+                        <span style="font-size: 1.2rem; margin-top: 15px;">iPhone</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de diálogo para download -->
+    <div id="downloadDialog" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Baixe o Aplicativo Papi Bet</h2>
+                <button class="close-btn" id="closeDialogBtn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="download-dialog-content">
+                    <div class="app-features">
+                        <div class="app-feature">
+                            <i class="fas fa-bolt"></i>
+                            <span>Mais rápido que o site</span>
+                        </div>
+                        <div class="app-feature">
+                            <i class="fas fa-lock"></i>
+                            <span>Login com biometria</span>
+                        </div>
+                        <div class="app-feature">
+                            <i class="fas fa-gift"></i>
+                            <span>Bônus exclusivos</span>
+                        </div>
+                        <div class="app-feature">
+                            <i class="fas fa-bell"></i>
+                            <span>Notificações de promoções</span>
+                        </div>
+                    </div>
+                    <div class="app-screenshot">
+                        <img src="images/app-screenshot.png" alt="App Screenshot">
+                    </div>
+                </div>
+                <div class="download-btn-container">
+                    <button id="selectModelBtn" class="btn-download">
+                        <i class="fas fa-download"></i> Baixar Aplicativo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

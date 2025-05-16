@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial de Instalação - Android | Papi Bet</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos específicos para a página de tutorial */
+        .tutorial-page {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .tutorial-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .tutorial-header h1 {
+            color: #ff6600;
+            margin-bottom: 10px;
+        }
+        
+        .tutorial-header .device-model {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .tutorial-header .device-model img {
+            width: 80px;
+            height: 80px;
+        }
+        
+        .tutorial-video-container {
+            position: relative;
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            background-color: #000;
+        }
+        
+        .tutorial-video {
+            width: 100%;
+            display: block;
+        }
+        
+        .download-btn-container {
+            text-align: center;
+            margin: 20px 0 30px;
+            padding: 15px;
+            background-color: rgba(255, 102, 0, 0.1);
+            border-radius: 12px;
+        }
+        
+        .btn-download {
+            display: inline-block;
+            background-color: #ff6600;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-download:hover {
+            background-color: #e65c00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .tutorial-content {
+            background-color: #2a2e35;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .tutorial-content h2 {
+            color: #ff6600;
+            margin-bottom: 20px;
+        }
+        
+        .tutorial-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .tutorial-step {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .step-number {
+            background-color: #ff6600;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-content h3 {
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        
+        .step-content p {
+            color: #ddd;
+            margin-bottom: 10px;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            color: #ff6600;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .back-button i {
+            margin-right: 5px;
+        }
+        
+        .back-button:hover {
+            color: #e65c00;
+            transform: translateX(-3px);
+        }
+        
+        .note-box {
+            background-color: rgba(255, 102, 0, 0.1);
+            border-left: 4px solid #ff6600;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .note-box h4 {
+            color: #ff6600;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .tutorial-page {
+                padding: 15px;
+            }
+            
+            .tutorial-content {
+                padding: 20px;
+            }
+            
+            .btn-download {
+                padding: 12px 24px;
+                font-size: 1rem;
+                width: 80%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra superior -->
+    <div class="top-bar">
+        <div class="menu-icon" id="menuToggle">≡</div>
+        <img class="logo" src="images/logo.png" alt="Papi Bet">
+        <div class="auth-buttons">
+            <button class="btn-login">LOGIN</button>
+            <button class="btn-register">REGISTRE-SE</button>
+        </div>
+    </div>
+
+    <!-- Banner de promoção -->
+    <div class="promo-banner">
+        <p>🎁🔥 Nova recompensa: Gire a Roda da Fortuna e ganhe prêmios diariamente 🔥🎁</p>
+    </div>
+
+    <!-- Menu lateral -->
+    <div class="side-menu" id="sideMenu">
+        <div class="side-menu-header">
+            <img class="logo" src="images/logo.png" alt="Papi Bet">
+            <div>Menu</div>
+            <div class="close-menu" id="closeMenu">✕</div>
+        </div>
+        
+        <div class="menu-grid">
+            <div class="menu-grid-item green">
+                <div>GRATIS</div>
+                <div>GAME OF SLOTS</div>
+                <div>Torneios de slots</div>
+            </div>
+            <div class="menu-grid-item blue">
+                <div>Promoções</div>
+            </div>
+            <div class="menu-grid-item orange">
+                <div>Torneio R$100k</div>
+            </div>
+            <div class="menu-grid-item navy">
+                <div class="coming-soon">EM BREVE</div>
+                <div>F1 CORRIDA</div>
+            </div>
+        </div>
+        
+        <div class="menu-item">
+            <i>♠</i> Cassino <span style="float:right;">▼</span>
+        </div>
+        <div class="menu-item">
+            <i>🎮</i> PGsoft
+        </div>
+        <div class="menu-item">
+            <i>🎥</i> Cassino ao vivo <span style="float:right;">▼</span>
+        </div>
+        <div class="menu-item">
+            <i>🎁</i> Bônus de Cassino
+        </div>
+        <div class="menu-item">
+            <i>🚀</i> Crash Games
+        </div>
+        <div class="menu-item">
+            <i>👥</i> Indique Um Amigo
+        </div>
+        <div class="menu-item">
+            <i>📖</i> Blog
+        </div>
+        <div class="menu-item menu-highlight">
+            <i>🏷️</i> PROMOÇÕES
+        </div>
+    </div>
+
+    <!-- Overlay para quando o menu estiver aberto -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Conteúdo principal -->
+    <main class="content">
+        <div class="tutorial-page">
+            <div class="tutorial-header">
+                <h1>Tutorial de Instalação</h1>
+                <div class="device-model">
+                    <img src="images/icons/android.png" alt="Android">
+                    <h2>Android</h2>
+                </div>
+                <p>Aprenda como instalar e configurar o aplicativo Papi Bet em seu dispositivo Android</p>
+            </div>
+            
+            <div class="tutorial-video-container">
+                <video id="tutorialVideo" class="tutorial-video" controls>
+                    <source src="videos/android/tutorial.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos HTML5.
+                </video>
+            </div>
+            
+            <!-- Botão de download entre o vídeo e o passo a passo -->
+            <div class="download-btn-container">
+                <a href="download/papibet-app.apk" id="downloadAppBtn" class="btn-download" download>
+                    <i class="fas fa-download"></i> Baixar Aplicativo
+                </a>
+            </div>
+            
+            <div class="tutorial-content">
+                <h2>Passo a Passo para Instalação</h2>
+                
+                <div class="tutorial-steps">
+                    <div class="tutorial-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Baixe o aplicativo</h3>
+                            <p>Clique no botão "Baixar Aplicativo" acima para iniciar o download do arquivo APK.</p>
+                            <p>O download do arquivo será iniciado automaticamente.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Permita instalação de fontes desconhecidas</h3>
+                            <p>Em dispositivos Android, você precisará permitir a instalação de aplicativos de fontes desconhecidas:</p>
+                            
+                            <div class="note-box">
+                                <h4>Nota: As instruções podem variar dependendo da versão do Android e do fabricante</h4>
+                                <p>Abaixo estão as instruções gerais que funcionam na maioria dos dispositivos Android.</p>
+                            </div>
+                            
+                            <p><strong>Para Android 8.0 ou superior:</strong></p>
+                            <p>1. Toque no arquivo APK baixado</p>
+                            <p>2. Se solicitado, toque em "Configurações"</p>
+                            <p>3. Ative a opção "Permitir desta fonte" ou "Permitir de fontes desconhecidas"</p>
+                            <p>4. Volte para a tela de instalação</p>
+                            
+                            <p><strong>Para Android 7.0 ou inferior:</strong></p>
+                            <p>1. Abra as Configurações do seu dispositivo</p>
+                            <p>2. Vá para "Segurança" ou "Privacidade"</p>
+                            <p>3. Ative a opção "Fontes desconhecidas" ou "Instalar aplicativos de fontes desconhecidas"</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Instale o aplicativo</h3>
+                            <p>1. Abra o arquivo APK baixado (geralmente na pasta "Downloads")</p>
+                            <p>2. Toque em "Instalar"</p>
+                            <p>3. Aguarde a conclusão da instalação</p>
+                            <p>4. Toque em "Abrir" para iniciar o aplicativo</p>
+                            
+                            <div class="note-box">
+                                <h4>Dica de segurança</h4>
+                                <p>Após a instalação, recomendamos desativar a opção "Fontes desconhecidas" nas configurações de segurança do seu dispositivo para manter seu aparelho protegido.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Crie sua conta ou faça login</h3>
+                            <p>1. Ao abrir o aplicativo, você verá a tela de boas-vindas</p>
+                            <p>2. Toque em "Criar Conta" se você é novo no Papi Bet</p>
+                            <p>3. Ou faça login com sua conta existente</p>
+                            <p>4. Siga as instruções na tela para completar o processo</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Aproveite o Papi Bet</h3>
+                            <p>1. Explore os diferentes jogos e apostas disponíveis</p>
+                            <p>2. Faça seu primeiro depósito para começar a jogar</p>
+                            <p>3. Aproveite os bônus de boas-vindas e promoções especiais</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Botão de download no final do passo a passo -->
+                <div class="download-btn-container" style="margin-top: 30px;">
+                    <a href="download/papibet-app.apk" id="downloadAppBtnBottom" class="btn-download" download>
+                        <i class="fas fa-download"></i> Baixar Aplicativo
+                    </a>
+                </div>
+                
+                <a href="index.html" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Voltar para a página inicial
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Barra de navegação inferior -->
+    <div class="bottom-nav">
+        <div class="nav-item">
+            <div class="icon">
+                <img src="images/icons/esportes-nav.png" alt="Esportes">
+            </div>
+            <span>Esportes</span>
+        </div>
+        <div class="nav-item">
+            <div class="icon">
+                <img src="images/icons/ao-vivo-nav.png" alt="Ao Vivo">
+            </div>
+            <span>Ao Vivo</span>
+        </div>
+        <div class="nav-item nav-item-special">
+            <div class="special-badge">GRATIS</div>
+            <div class="special-text">GAME OF SLOTS</div>
+            <span>Torneios de Slots</span>
+        </div>
+        <div class="nav-item">
+            <div class="icon">
+                <img src="images/icons/torneio-nav.png" alt="Torneio">
+            </div>
+            <span>Torneio</span>
+        </div>
+        <div class="nav-item">
+            <div class="icon">
+                <img src="images/icons/jogos-nav.png" alt="Jogos">
+            </div>
+            <span>Jogos</span>
+        </div>
+        <div class="nav-item">
+            <div class="icon">
+                <img src="images/icons/suporte-nav.png" alt="Suporte">
+            </div>
+            <span>Suporte</span>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu lateral
+            const menuToggle = document.getElementById('menuToggle');
+            const closeMenu = document.getElementById('closeMenu');
+            const sideMenu = document.getElementById('sideMenu');
+            const menuOverlay = document.getElementById('menuOverlay');
+            const downloadAppBtn = document.getElementById('downloadAppBtn');
+            const downloadAppBtnBottom = document.getElementById('downloadAppBtnBottom');
+            
+            menuToggle.addEventListener('click', function() {
+                sideMenu.classList.add('active');
+                menuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+
+            closeMenu.addEventListener('click', function() {
+                sideMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            menuOverlay.addEventListener('click', function() {
+                sideMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            
+            // Armazenar o modelo atual para uso na página de agradecimento
+            localStorage.setItem('currentModel', 'android');
+            
+            // Ação do botão de download
+            downloadAppBtn.addEventListener('click', function(e) {
+                // Não prevenir o comportamento padrão para permitir o download
+                // Armazenar que o download foi iniciado
+                localStorage.setItem('downloadStarted', 'true');
+                
+                // Redirecionar para a página de agradecimento após um pequeno delay
+                setTimeout(() => {
+                    window.location.href = 'obrigado.html';
+                }, 1000); // Tempo suficiente para iniciar o download
+            });
+            
+            // Ação do botão de download no final da página
+            if (downloadAppBtnBottom) {
+                downloadAppBtnBottom.addEventListener('click', function(e) {
+                    // Não prevenir o comportamento padrão para permitir o download
+                    // Armazenar que o download foi iniciado
+                    localStorage.setItem('downloadStarted', 'true');
+                    
+                    // Redirecionar para a página de agradecimento após um pequeno delay
+                    setTimeout(() => {
+                        window.location.href = 'obrigado.html';
+                    }, 1000); // Tempo suficiente para iniciar o download
+                });
+            }
+        });
+    </script>
+</body>
+</html>
